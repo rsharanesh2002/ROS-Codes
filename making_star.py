@@ -3,7 +3,7 @@ import rospy # importing the rospy library
 from turtlesim.srv import *
 from turtlesim.msg import  *
 from std_srvs.srv import Empty
-turtle_x,turtle_y,theta = 0,0,0  
+  
 '''
 def pose_callback(pose):
     global turtle_x,turtle_y,theta
@@ -12,6 +12,7 @@ def pose_callback(pose):
     theta = pose.theta
     rospy.loginfo("Turtle\'s X = %f ; Turtle\'s Y = %f ; Theta = %f \n",turtle_x,turtle_y,theta)
 '''
+
 def func():
     rospy.init_node('move_turtle',anonymous=True)
     #rospy.Subscriber('/turtle1/pose',Pose,pose_callback)
