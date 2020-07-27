@@ -2,6 +2,7 @@
 
 This codes are written with ros noetic. There are two options of having ROS noetic on your machine. You can either download ROS from the official page on your local machine, or pull the docker image. 
 
+## Basic setup
 To run these codes first you need to pull the docker image of ros/noetic
 ```
 docker pull osrf/ros:noetic-desktop-full # Pull the latest version of ROS Noetic
@@ -23,4 +24,7 @@ nano ~/.bashrc # opens up the .bashrc file
 source /opt/ros/noetic/setup.bash
 source ~/catkin_ws/devel/setup.bash
 ```
+By doing so, the sourcing will take place automatically every time you run the docker iamge.
+
+## Moving to turtlesim
 
