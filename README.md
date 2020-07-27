@@ -12,5 +12,15 @@ After pulling the docker image run the docker image in your terminal with the fo
 xhost +
 docker run -it -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY osrf/ros:noetic-desktop-full
 ```
-This command will open up the docker image and run it in interactive mode and also allows you to have external displays
+This command will open up the docker image and run it in interactive mode and also allows you to have external displays.
+
+If you are using ros for the first time, you must source few setup files before getting started with your actual working of the code. To do this you must actually open your `~/.bashrc` file and add the following commands at the last of the `.bashrc` file for sourcing the setup files,
+```
+nano ~/.bashrc # opens up the .bashrc file
+
+### After opening the file add the following two lines of code at the bottom of the file
+
+source /opt/ros/noetic/setup.bash
+source ~/catkin_ws/devel/setup.bash
+```
 
