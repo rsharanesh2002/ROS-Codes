@@ -74,4 +74,28 @@ find_package(catkin REQUIRED COMPONENTS
 )
 ```
 
+Now,finally it's time to run our script: Use the following commands
+
+Run this in your terminal, this will start the roscore
+```
+roscore
+```
+
+Open a new terminal within the container, to do that use
+```
+docker exec -it <container-id> bash
+```
+
+Now, start the turtlesim_node with
+```
+rosrun turtlesim turtlesim_node
+```
+This will open up a window with a turtle at the center of the window.
+
+Finally run our script in another new terminal using the following commands,
+```
+rosrun my_turtle making_star.py
+```
+
+This will move the turtle in such a way that it will make a star.
 
