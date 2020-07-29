@@ -3,7 +3,7 @@ import rospy # importing the rospy library
 from turtlesim.srv import *
 from turtlesim.msg import  *
 from std_srvs.srv import Empty
-  
+turtle_x,turtle_y,theta
 '''
 def pose_callback(pose):
     global turtle_x,turtle_y,theta
