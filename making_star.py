@@ -16,6 +16,7 @@ def pose_callback(pose):
 
 
 def func():
+    global turtle_x,turtle_y,theta
     rospy.init_node('move_turtle',anonymous=True)
     rospy.Subscriber('/turtle1/pose',Pose,pose_callback)
     rospy.loginfo("X:axis at %f \n",turtle_x)
