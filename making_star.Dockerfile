@@ -1,11 +1,12 @@
 FROM osrf/ros:noetic-desktop-full
-RUN source /opt/ros/noetic/setup.bash
 
 RUN apt-get update && apt-get upgrade
 RUN apt-get install -y \
   wget \
   ros-noetic-turtlesim \
-  python3 \
+  python3
+  
+RUN source /opt/ros/noetic/setup.bash
 
 RUN mkdir -p ~/catkin_ws/src
 RUN cd ~/catkin_ws
