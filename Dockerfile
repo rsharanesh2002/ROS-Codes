@@ -11,7 +11,7 @@ RUN apt-get update \
     ros-noetic-turtlesim \
     python3
 
-ENV CATKIN_WS = /root/catkin_ws
+ENV CATKIN_WS = ~/catkin_ws
 RUN mkdir -p ~/catkin_ws/src
 WORKDIR $CATKIN_WS/src
 
@@ -23,7 +23,12 @@ RUN source /opt/ros/${ROS_DISTRO}/setup.bash \
     && source ~/catkin_ws/devel/setup.bash \
     && cd ~/catkin_ws/src \
     && catkin_create_pkg my_turtle rospy std_msgs turtlesim \
-    && cd my_turtle \
+    && cd ~/catkin_ws \
+    && catkin_make
+
+RUN source /opt/ros/${ROS_DISTRO}/setup.bash \
+    && source ~/catkin_ws/devel/setup.bash \
+    && roscd my_turtle \
     && mkdir scripts \
     && cd scripts \
     && wget -O making_star.py https://raw.githubusercontent.com/rsharanesh-iitm/ROS-Codes/master/making_star.py \
@@ -33,8 +38,7 @@ RUN source /opt/ros/${ROS_DISTRO}/setup.bash \
     && wget -O CMakeLists.txt https://raw.githubusercontent.com/rsharanesh-iitm/ROS-Codes/master/CMakeLists.txt \
     && cd ~/catkin_ws \
     && catkin_make
-RUN echo "source /ros_entrypoint.sh" >> /root/.bashrc
 
-COPY ./ros_catkin_entrypoint.sh /
-ENTRYPOINT ["/ros_catkin_entrypoint.sh"]
+RUN echo "source /opt/ros/noetic/setup.bash && source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
+
 CMD ["bash"]
