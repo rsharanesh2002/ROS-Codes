@@ -33,3 +33,8 @@ RUN source /opt/ros/${ROS_DISTRO}/setup.bash \
     && wget -O CMakeLists.txt https://raw.githubusercontent.com/rsharanesh-iitm/ROS-Codes/master/CMakeLists.txt \
     && cd ~/catkin_ws \
     && catkin_make
+RUN echo "source /ros_entrypoint.sh" >> /root/.bashrc
+
+COPY ./ros_catkin_entrypoint.sh /
+ENTRYPOINT ["/ros_catkin_entrypoint.sh"]
+CMD ["bash"]
