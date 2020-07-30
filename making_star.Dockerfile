@@ -3,7 +3,7 @@ FROM osrf/ros:noetic-desktop-full
 LABEL description=" This docker image for making star in turtlesim"
 
 ARG DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && apt-get upgrade
+RUN apt-get update   # && apt-get upgrade
 RUN apt-get install -y \
   wget \
   ros-noetic-turtlesim \
