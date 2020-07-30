@@ -27,7 +27,7 @@ def func():
     angle =  (3.14/num_shape)
                           
     try:
-      resp1 = tele_abs(int(global.turtle_x),int(global.turtle_y),0)
+      resp1 = tele_abs(int(turtle_x),int(turtle_y),0)
       #resp2 = tele_abs(start_coord,start_coord,0)
     except rospy.ServiceException as exc:
       print("Service did not process request: " + str(exc))
