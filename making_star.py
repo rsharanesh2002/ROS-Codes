@@ -19,7 +19,7 @@ def func():
     global turtle_x,turtle_y,theta
     rospy.init_node('move_turtle',anonymous=True)
     rospy.Subscriber('/turtle1/pose',Pose,pose_callback)
-    rospy.loginfo("X:axis at %f \n",turtle_x)
+    #rospy.loginfo("X:axis at %f \n",turtle_x)
     rospy.wait_for_service("/turtle1/teleport_absolute")
     tele_abs = rospy.ServiceProxy("/turtle1/teleport_absolute", TeleportAbsolute)
     #start_coord = int(input("Enter the start point (symmetric coordinate; enter only one value): "))
@@ -27,7 +27,7 @@ def func():
     angle =  (3.14/num_shape)
                           
     try:
-      resp1 = tele_abs(int(turtle_x),int(turtle_y),0)
+      resp1 = tele_abs(int(global.turtle_x),int(global.turtle_y),0)
       #resp2 = tele_abs(start_coord,start_coord,0)
     except rospy.ServiceException as exc:
       print("Service did not process request: " + str(exc))
