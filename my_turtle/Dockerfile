@@ -31,11 +31,11 @@ RUN source /opt/ros/${ROS_DISTRO}/setup.bash \
     && roscd my_turtle \
     && mkdir scripts \
     && cd scripts \
-    && wget -O making_star.py https://raw.githubusercontent.com/rsharanesh-iitm/ROS-Codes/master/making_star.py \
+    && wget -O making_star.py https://raw.githubusercontent.com/rsharanesh2002/ROS-Codes/master/my_turtle/scripts/making_star.py \
     && chmod +x * \
     && cd .. \
     && rm CMakeLists.txt \
-    && wget -O CMakeLists.txt https://raw.githubusercontent.com/rsharanesh-iitm/ROS-Codes/master/CMakeLists.txt \
+    && wget -O https://raw.githubusercontent.com/rsharanesh2002/ROS-Codes/master/my_turtle/CMakeLists.txt \
     && cd ~/catkin_ws \
     && catkin_make
 
