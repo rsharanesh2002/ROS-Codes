@@ -1,5 +1,5 @@
 FROM osrf/ros:noetic-desktop-full
-LABEL description=" This docker image for making star in turtlesim"
+LABEL description=" This is a docker image for making star in turtlesim"
 
 SHELL ["/bin/bash","-c"]
 
