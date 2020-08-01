@@ -35,7 +35,7 @@ RUN source /opt/ros/${ROS_DISTRO}/setup.bash \
     && chmod +x * \
     && cd .. \
     && rm CMakeLists.txt \
-    && wget -O https://raw.githubusercontent.com/rsharanesh2002/ROS-Codes/master/my_turtle/CMakeLists.txt \
+    && wget -O CMakeLists.txt https://raw.githubusercontent.com/rsharanesh2002/ROS-Codes/master/my_turtle/CMakeLists.txt \
     && cd ~/catkin_ws \
     && catkin_make
 
