@@ -12,11 +12,15 @@ def pose_callback(pose):
     turtle_x = pose.x
     turtle_y = pose.y
     theta = pose.theta
+    print("turtle_x_pc :"+str(turtle_x),end='\t')
+    print("turtle_y_pc :"+str(turtle_y))
     rospy.loginfo("Turtle\'s X = %f ; Turtle\'s Y = %f ; Theta = %f \n",turtle_x,turtle_y,theta)
 
 
 def func():
     global turtle_x,turtle_y,theta
+    print("turtle_x_fc1 :"+str(turtle_x),end='\t')
+    print("turtle_y_fc1 :"+str(turtle_y))
     rospy.init_node('move_turtle',anonymous=True)
     rospy.Subscriber('/turtle1/pose',Pose,pose_callback)
     #rospy.loginfo("X:axis at %f \n",turtle_x)
@@ -25,7 +29,9 @@ def func():
     #start_coord = int(input("Enter the start point (symmetric coordinate; enter only one value): "))
     num_shape = 5 #int(input("Enter the number of point edged star the bot should cover: "))
     angle =  (3.14/num_shape)
-                          
+    print("turtle_x_fc2 :"+str(turtle_x),end='\t')
+    print("turtle_y_fc2 :"+str(turtle_y))
+    
     try:
       resp1 = tele_abs(int(turtle_x),int(turtle_y),0)
       #resp2 = tele_abs(start_coord,start_coord,0)
